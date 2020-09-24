@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": false
+    },
+    "name": "What's Stopping You?",
+    "description": "Don't let your Github contributions chart get you down.",
+    "version": "0.0.0.1",
+    "browser_action": {
+        "default_icon": "whatsstoppingyou.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://github.com/*"
+            ],
+            "all_frames": true,
+            "js": [
+                "index.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "web_accessible_resources": ["awesome.gif"]
+}
